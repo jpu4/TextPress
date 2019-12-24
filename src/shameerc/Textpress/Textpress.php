@@ -204,8 +204,12 @@ class Textpress
         $content    = stream_get_contents($handle);
         // Don't allow out-of-control blank lines
         $content    = preg_replace("/" . PHP_EOL. "{2,}/", PHP_EOL . PHP_EOL, $content);
-        $sections   = explode( PHP_EOL . PHP_EOL, $content);
-        $meta       = json_decode(array_shift($sections), true);
+        // bug fixed by: https://github.com/shameerc/TextPress/issues/33#issuecomment-236172001
+        //$sections   = explode( PHP_EOL . PHP_EOL, $content);
+        //$meta       = json_decode(array_shift($sections), true);
+        $sections = explode( "}", $content);
+        $meta = json_decode(array_shift($sections)."}", true);
+        
         $contents   = implode( PHP_EOL . PHP_EOL, $sections);
         if($this->getConfig('markdown')){ 
             $contents = \Michelf\MarkdownExtra::defaultTransform($contents);
