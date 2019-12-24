@@ -196,5 +196,15 @@ class Article
     {
         return $this->getMeta('category');
     }
+    
+    /**
+    *
+    * Get feature image
+    * @return string image
+    */
+    public function getFeatureImage()
+    {
+        return $this->getMeta('image');
+    }
 
 }
