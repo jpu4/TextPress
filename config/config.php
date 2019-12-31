@@ -38,6 +38,10 @@ return array(
                 ,'date'     =>'([1-9]|[0-3][0-9])'
             )
         ),
+		'search' => array(
+ 			'route' => '/search',
+ 			'template' => 'search'
+ 		),
         'category' => array(
             'route'     => '/category/:category',
             'template'  => 'index'

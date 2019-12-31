@@ -1,0 +1,13 @@
+{
+"title" : "slug matches title",
+"author" : "James Ussery",
+"date" : "d-M-YYYY",
+"tag" : "tag-1,tag-2",
+"category" : "category-1,category-2",
+"slug" : "slug-matches-title",
+"images" : "feature-image.jpg"
+}
+
+/*
+ * Pages are stored in the root of the active theme
+**/
